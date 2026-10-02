@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROGRESA | Masuk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --base-1: #DFD0FA;
+    --base-2: #F4D8ED;
+    --text-muted: #6f6a85;
+    --text-label: #77737f;
+    --link: #6a5aa8;
+    --accent-border: #a98bf0;
+    --blue: #5b7be6;
+    --pink: #c0599c;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { min-height: 100%; }
+
+  body {
+    min-height: 100vh;
+    font-family: "Hanken Grotesk", "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, var(--base-1) 0%, var(--base-2) 100%);
+    background-attachment: fixed;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 88px 20px 40px;
+  }
+
+  /* Header */
+  .brand {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .brand h1 {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    background: linear-gradient(90deg, var(--blue) 0%, var(--pink) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .brand p {
+    max-width: 470px;
+    margin: 18px auto 0;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.55;
+    letter-spacing: -0.4px;
+    color: var(--text-muted);
+  }
+
+  /* Card */
+  .card {
+    width: 100%;
+    max-width: 568px;
+    padding: 34px 34px 54px;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 40px rgba(170, 140, 220, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .field + .field { margin-top: 22px; }
+
+  .label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    color: var(--text-label);
+  }
+
+  .forgot {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--link);
+    text-decoration: none;
+  }
+  .forgot:hover { text-decoration: underline; }
+
+  .input-wrap { position: relative; }
+
+  .input-wrap svg {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    stroke: #8a95b5;
+    fill: none;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    height: 42px;
+    border: 0;
+    border-radius: 14px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3d3a4f;
+    box-shadow: 0 3px 5px rgba(60, 50, 90, 0.28);
+    outline: none;
+    transition: box-shadow 0.15s ease, outline-color 0.15s ease;
+  }
+
+  input#nim {
+    background: #ffffff;
+    padding: 0 14px 0 40px;
+  }
+
+  input#sandi {
+    background: #f8f9fb;
+    padding: 0 14px;
+  }
+
+  input[type="text"]:focus-visible,
+  input[type="password"]:focus-visible {
+    outline: 2px solid var(--accent-border);
+    outline-offset: 2px;
+  }
+
+  /* Remember */
+  .remember {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+    cursor: pointer;
+  }
+
+  .remember input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #c9c4d6;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    margin: 0;
+  }
+
+  .remember input:checked {
+    background: var(--accent-border);
+    border-color: var(--accent-border);
+  }
+
+  .remember input:checked::after {
+    content: "";
+    width: 4px;
+    height: 7px;
+    border: solid #fff;
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg) translate(-1px, -1px);
+  }
+
+  .remember input:focus-visible {
+    outline: 2px solid var(--accent-border);
+    outline-offset: 2px;
+  }
+
+  .remember span {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    color: var(--text-muted);
+    text-transform: none;
+  }
+
+  /* Button */
+  .btn {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-top: 22px;
+    border: 1px solid var(--accent-border);
+    border-radius: 14px;
+    background: linear-gradient(100deg, var(--base-1) 0%, #efc6e8 100%);
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    color: #707078;
+    cursor: pointer;
+    transition: filter 0.15s ease, transform 0.1s ease;
+  }
+
+  .btn:hover { filter: brightness(1.03); }
+  .btn:active { transform: translateY(1px); }
+  .btn:focus-visible {
+    outline: 2px solid var(--accent-border);
+    outline-offset: 2px;
+  }
+
+  /* Footer */
+  .foot {
+    margin-top: 28px;
+    text-align: center;
+    font-size: 8.5px;
+    font-weight: 800;
+    line-height: 1;
+    color: #76728c;
+  }
+
+  .foot p + p { margin-top: 10px; }
+  .foot p:last-child { font-size: 8px; }
+
+  .foot a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .foot a:hover { text-decoration: underline; }
+
+  @media (max-width: 520px) {
+    body { padding-top: 56px; }
+    .card { padding: 26px 20px 36px; border-radius: 32px; }
+    .brand h1 { font-size: 30px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="brand">
+    <h1>PROGRESA</h1>
+    <p>Sistem Manajemen Bimbingan Skripsi &amp; Tugas Akhir Berbasis Progres dan Approval Bertingkat</p>
+  </header>
+
+  <main class="card">
+    <form action="#" method="post" novalidate>
+      <div class="field">
+        <div class="label-row">
+          <label for="nim">NIM / NIP / Email</label>
+        </div>
+        <div class="input-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"></path>
+          </svg>
+          <input type="text" id="nim" name="nim" autocomplete="username">
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="label-row">
+          <label for="sandi">Kata Sandi</label>
+          <a class="forgot" href="#">Lupa Kata Sandi?</a>
+        </div>
+        <input type="password" id="sandi" name="sandi" autocomplete="current-password">
+      </div>
+
+      <label class="remember">
+        <input type="checkbox" name="ingat">
+        <span>Ingat sesi saya</span>
+      </label>
+
+      <button type="submit" class="btn">Masuk ke Sistem</button>
+    </form>
+  </main>
+
+  <footer class="foot">
+    <p><a href="#">Kendala akun? Hubungi Helpdesk Akademik</a></p>
+    <p>&copy; 2026 Progresa Academic Portal. Hak Cipta Dilindungi.</p>
+    <p>PROGRESA v2.4 &bull; Keamanan Terverifikasi SSL</p>
+  </footer>
+
+</body>
+</html>
